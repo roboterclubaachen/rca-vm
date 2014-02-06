@@ -54,12 +54,12 @@
   {
     "type": "file",
     "source": "files/busblaster-ktlink.cfg",
-    "destination": "/usr/share/openocd/scripts/interface/busblaster-ktlink.cfg"
+    "destination": "~/busblaster-ktlink.cfg"
   },
   {
     "type": "file",
     "source": "files/40-openocd.rules",
-    "destination": "/etc/udev/rules.d/40-openocd.rules"
+    "destination": "~/40-openocd.rules"
   },
   {
     "type": "shell",

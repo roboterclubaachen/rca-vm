@@ -47,8 +47,7 @@
       "script/vagrant.sh",
       "script/sshd.sh",
       "script/vmtools.sh",
-      "script/xpcc.sh",
-      "script/xpcc_git.sh"
+      "script/xpcc.sh"
     ]
   },
   {
