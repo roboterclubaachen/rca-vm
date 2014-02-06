@@ -32,7 +32,7 @@ To build the ``eurobot-vm.box``:
 Import the boxes into vagrant:
 
 	vagrant box add xpcc xpcc-vm.box
-	vagrant box add eurobot xpcc-vm.box
+	vagrant box add eurobot eurobot-vm.box
 
 Then you can start the boxes at a suitable location:
 
