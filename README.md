@@ -13,9 +13,8 @@ It incorporates all software in ``xpcc-vm.box``, but has a GUI with the Eclipse 
 Getting Started
 ===============
 
-A GNU Make makefile is provided to support automated builds.  It assumes
-that both GNU Make and Packer are in the PATH.  Download and install
-Packer from <http://www.packer.io/downloads.html>
+Download and install Packer from <http://www.packer.io/downloads.html>.
+You need VirtualBox installed as well.
 
 To build the ``xpcc-vm.box``:
 
@@ -34,10 +33,17 @@ Import the boxes into vagrant:
 	vagrant box add xpcc xpcc-vm.box
 	vagrant box add eurobot eurobot-vm.box
 
-Then you can start the boxes at a suitable location:
+Then you can start the xpcc-vm from any suitable location:
 
 	vagrant init xpcc
 	vagrant up
+	vagrant ssh
+
+To use the eurobot-vm, do the same in a different location:
+
+	vagrant init eurobot
+	vagrant up
+	# no need for vagrant ssh, the GUI will pop up.
 
 Credit
 ======
