@@ -45,7 +45,6 @@
     "scripts": [
       "script/base.sh",
       "script/vagrant.sh",
-      "script/desktop.sh",
       "script/sshd.sh",
       "script/vmtools.sh",
       "script/xpcc.sh",
@@ -56,16 +55,30 @@
     "type": "file",
     "source": "files/busblaster-ktlink.cfg",
     "destination": "~/busblaster-ktlink.cfg"
-  },
-  {
+  },{
     "type": "file",
     "source": "files/40-openocd.rules",
     "destination": "~/40-openocd.rules"
+  },{
+    "type": "file",
+    "source": "files/eclipse.desktop",
+    "destination": "~/eclipse.desktop"
+  },{
+    "type": "file",
+    "source": "files/eclipse.gtkrc",
+    "destination": "~/eclipse.gtkrc"
+  },{
+    "type": "file",
+    "source": "files/eclipse-nice.sh",
+    "destination": "~/eclipse-nice.sh"
   },
   {
     "type": "shell",
     "execute_command": "echo 'rca' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
     "scripts": [
+      "script/xpcc_files.sh",
+      "script/eclipse.sh",
+      "script/desktop.sh",
       "script/cleanup.sh",
       "script/zerodisk.sh"
     ]
