@@ -1,0 +1,80 @@
+{
+  "variables":
+  {
+    "provisioner": "provisionerless",
+    "provisioner_version": "",
+    "iso_url": "http://releases.ubuntu.com/12.04/ubuntu-12.04.3-server-amd64.iso",
+    "iso_checksum": "4e36c272dde245cfadf14ff8895566571a38f4d2"
+  },
+  "builders": [
+  {
+    "vm_name": "xpcc-vm",
+    "type": "virtualbox-iso",
+    "http_directory": "files",
+    "iso_url": "{{ user `iso_url` }}",
+    "iso_checksum": "{{ user `iso_checksum` }}",
+    "iso_checksum_type": "sha1",
+    "guest_os_type": "Ubuntu_64",
+    "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
+    "virtualbox_version_file": ".vbox_version",
+    "ssh_username": "rca",
+    "ssh_password": "rca",
+    "ssh_wait_timeout": "10000s",
+    "boot_command": [
+      "<esc><esc><enter><wait>",
+      "/install/vmlinuz noapic ",
+      "preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg ",
+      "debian-installer=en_US auto locale=en_US kbd-chooser/method=us ",
+      "hostname={{ .Name }} ",
+      "fb=false debconf/frontend=noninteractive ",
+      "keyboard-configuration/modelcode=SKIP keyboard-configuration/layout=USA ",
+      "keyboard-configuration/variant=USA console-setup/ask_detect=false ",
+      "initrd=/install/initrd.gz -- <enter>"
+    ],
+    "shutdown_command": "echo 'rca'|sudo -S shutdown -P now",
+    "disk_size": 10140,
+    "vboxmanage": [
+      ["modifyvm", "{{.Name}}", "--memory", "2048"],
+      ["modifyvm", "{{.Name}}", "--cpus", "4"]
+    ]
+  }],
+  "provisioners": [
+  {
+    "type": "shell",
+    "execute_command": "echo 'rca' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
+    "scripts": [
+      "script/base.sh",
+      "script/vagrant.sh",
+      "script/sshd.sh",
+      "script/vmtools.sh",
+      "script/xpcc.sh",
+      "script/xpcc_git.sh"
+    ]
+  },
+  {
+    "type": "file",
+    "source": "files/40-openocd.rules",
+    "destination": "~/40-openocd.rules"
+  },
+  {
+    "type": "file",
+    "source": "files/busblaster-ktlink.cfg",
+    "destination": "~/busblaster-ktlink.cfg"
+  },
+  {
+    "type": "shell",
+    "execute_command": "echo 'rca' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
+    "scripts": [
+      "script/xpcc_programmer.sh",
+      "script/cleanup.sh",
+      "script/zerodisk.sh"
+    ]
+  }],
+  "post-processors": [
+  {
+    "type": "vagrant",
+    "keep_input_artifact": false,
+    "vagrantfile_template": "vagrantfile/vagrantfile-xpcc.template",
+    "output": "../xpcc-vm.box"
+  }]
+}
