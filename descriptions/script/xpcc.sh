@@ -8,8 +8,8 @@ apt-get -y update
 # install packages
 
 apt-get install -y python-dev scons python-jinja2 python-lxml graphviz git \
-git-flow gcc build-essential libboost-thread-dev libboost-system-dev meld \
-libasio-dev gcc-avr binutils-avr avr-libc pandoc avrdude curl gitg gitk \
+git-flow gitk build-essential libboost-thread-dev libboost-system-dev meld \
+libasio-dev gcc-avr binutils-avr avr-libc pandoc avrdude curl gitg gcc texinfo \
 markdown python-docutils libusb-dev dfu-programmer bash-completion picocom \
 libgtkmm-2.4-dev libreadline-dev libsdl1.2-dev libsdl-image1.2-dev git-core \
 subversion libusb-1.0-0-dev python-pip gcc-arm-none-eabi libftdi-dev libtool

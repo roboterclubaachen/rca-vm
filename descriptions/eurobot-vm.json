@@ -45,6 +45,7 @@
     "scripts": [
       "script/base.sh",
       "script/vagrant.sh",
+      "script/desktop.sh",
       "script/sshd.sh",
       "script/vmtools.sh",
       "script/xpcc.sh",

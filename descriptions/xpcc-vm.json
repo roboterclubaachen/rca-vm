@@ -64,7 +64,7 @@
     "type": "shell",
     "execute_command": "echo 'rca' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
     "scripts": [
-      "script/xpcc_programmer.sh",
+      "script/xpcc_files.sh",
       "script/cleanup.sh",
       "script/zerodisk.sh"
     ]
