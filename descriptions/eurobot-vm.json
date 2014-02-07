@@ -71,6 +71,10 @@
     "type": "file",
     "source": "files/eclipse-nice.sh",
     "destination": "~/eclipse-nice.sh"
+  },{
+    "type": "file",
+    "source": "files/org.eclipse.ui.ide.prefs",
+    "destination": "~/org.eclipse.ui.ide.prefs"
   },
   {
     "type": "shell",

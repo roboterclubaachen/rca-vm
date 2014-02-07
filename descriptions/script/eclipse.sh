@@ -1,4 +1,5 @@
 VAGRANT_USER=rca
+ECLIPSE_FOLDER_NAME=org.eclipse.platform_4.3.0_1473617060_linux_gtk_x86_64
 
 echo "download and expand eclipse"
 curl http://ftp-stud.fht-esslingen.de/pub/Mirrors/eclipse/technology/epp/downloads/release/kepler/SR1/eclipse-cpp-kepler-SR1-linux-gtk-x86_64.tar.gz \
@@ -14,15 +15,11 @@ mv ~/eclipse.gtkrc /opt/eclipse
 chmod a+x /usr/bin/eclipse-nice.sh
 
 echo "set workspace manually"
-mkdir /opt/eclipse/configuration/.settings
-cd /opt/eclipse/configuration/.settings
-sh -c 'echo "MAX_RECENT_WORKSPACES=5" > org.eclipse.ui.ide.prefs'
-sh -c 'echo "RECENT_WORKSPACES=/home/rca/workspace" >> org.eclipse.ui.ide.prefs'
-sh -c 'echo "RECENT_WORKSPACES_PROTOCOL=3" >> org.eclipse.ui.ide.prefs'
-sh -c 'echo "SHOW_WORKSPACE_SELECTION_DIALOG=false" >> org.eclipse.ui.ide.prefs'
-sh -c 'echo "eclipse.preferences.version=1" >> org.eclipse.ui.ide.prefs'
-chown -R $VAGRANT_USER /opt/eclipse/configuration/.settings
-cd
+mkdir -p ~/.eclipse/$ECLIPSE_FOLDER_NAME
+cp -r /opt/eclipse/configuration ~/.eclipse/$ECLIPSE_FOLDER_NAME
+mkdir -p ~/.eclipse/$ECLIPSE_FOLDER_NAME/configuration/.settings
+mv ~/org.eclipse.ui.ide.prefs ~/.eclipse/$ECLIPSE_FOLDER_NAME/configuration/.settings
+chown -R rca ~/.eclipse
 
 # We are installing the following plug-ins:
 #   - Eclipse Java Development Tools
