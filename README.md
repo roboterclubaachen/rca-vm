@@ -13,23 +13,30 @@ It incorporates all software in ``xpcc-vm.box``, but has a GUI with the Eclipse 
 Getting Started
 ===============
 
-Download and install Packer from <http://www.packer.io/downloads.html>.
-You need VirtualBox installed as well.
+You need [Packer](http://www.packer.io/docs/installation.html), [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and optionally [Vagrant](http://www.vagrantup.com/downloads.html) installed on your system.
+
+If you are running OS X, you can install Packer using [Homebrew](http://brew.sh):
+
+	$ brew tap homebrew/binary
+	$ brew install packer
 
 To build the ``xpcc-vm.box``:
 
-	cd descriptions
+	cd rca-vm/descriptions
 	packer build xpcc-vm.json
 	cd ../
 
 To build the ``eurobot-vm.box``:
 
-	cd descriptions
+	cd rca-vm/descriptions
 	packer build eurobot-vm.json
 	cd ../
 
+You can import the boxes manually into VirtualBox, however VM management with vagrant is *strongly* recommended.
+
 Import the boxes into vagrant:
 
+	cd rca-vm
 	vagrant box add xpcc xpcc-vm.box
 	vagrant box add eurobot eurobot-vm.box
 
