@@ -10,5 +10,8 @@ if [ -f $LIGHTDM_CONFIG ]; then
     echo "autologin-user-timeout=0" >> $LIGHTDM_CONFIG
 fi
 
+# install the virtualbox guest additions
+sudo apt-get install -y virtualbox-guest-additions
+
 # this thing is kinda useless
 rm -rf ~/examples.desktop

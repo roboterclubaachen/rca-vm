@@ -35,3 +35,11 @@ make install
 cd
 echo "export PATH=\$PATH:/opt/openocd/bin/" >> ~/.bashrc
 rm -rf ~/openocd
+
+# build gitslave from source
+sudo apt-get install -y libterm-progressbar-perl libparallel-iterator-perl
+git clone git://gitslave.git.sourceforge.net/gitroot/gitslave/gitslave
+cd gitslave/
+sudo make install
+cd
+rm -rf ~/gitslave

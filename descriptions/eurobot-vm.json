@@ -48,7 +48,7 @@
       "script/sshd.sh",
       "script/vmtools.sh",
       "script/xpcc.sh",
-      "script/eurobot.sh"
+      "script/java.sh"
     ]
   },
   {
