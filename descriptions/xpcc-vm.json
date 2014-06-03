@@ -3,7 +3,7 @@
   {
     "provisioner": "provisionerless",
     "provisioner_version": "",
-    "iso_url": "http://releases.ubuntu.com/12.04/ubuntu-12.04.3-server-amd64.iso",
+    "iso_url": "http://releases.ubuntu.com/12.04/ubuntu-12.04.4-server-amd64.iso",
     "iso_checksum": "4e36c272dde245cfadf14ff8895566571a38f4d2"
   },
   "builders": [
