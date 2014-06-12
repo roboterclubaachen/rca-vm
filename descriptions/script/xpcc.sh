@@ -1,7 +1,6 @@
-VAGRANT_USER=rca
 
 # add required repositories
-sudo apt-get install -y python-software-properties
+sudo apt-get install -y software-properties-common
 add-apt-repository ppa:terry.guo/gcc-arm-embedded
 apt-get -y update
 
@@ -19,14 +18,12 @@ pip install --user bitarray
 
 # The tipc kernel modul has to be enabled manually
 sh -c 'echo "tipc" >> /etc/modules'
-usermod -a -G dialout $VAGRANT_USER
-usermod -a -G vboxsf $VAGRANT_USER
 
 # install openocd from source
 cd
 git clone git://git.code.sf.net/p/openocd/code openocd
 cd openocd/
-git checkout v0.7.0
+git checkout v0.8.0
 ./bootstrap
 ./configure --enable-maintainer-mode --enable-ft2232_libftdi  --enable-stlink \
 --enable-buspirate --prefix=/opt/openocd --disable-option-checking

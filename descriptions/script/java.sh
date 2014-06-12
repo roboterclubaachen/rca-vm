@@ -1,5 +1,5 @@
 # add required repositories
-sudo apt-get install -y python-software-properties
+sudo apt-get install -y software-properties-common
 add-apt-repository ppa:webupd8team/java
 apt-get -y update
 

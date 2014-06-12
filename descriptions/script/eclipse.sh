@@ -1,20 +1,22 @@
 VAGRANT_USER=rca
-ECLIPSE_FOLDER_NAME=org.eclipse.platform_4.3.0_1473617060_linux_gtk_x86_64
 
-echo "download and expand eclipse"
-curl http://ftp-stud.fht-esslingen.de/pub/Mirrors/eclipse/technology/epp/downloads/release/kepler/SR1/eclipse-cpp-kepler-SR1-linux-gtk-x86_64.tar.gz \
+echo "==> download and expand eclipse"
+curl http://ftp.wh2.tu-dresden.de/pub/mirrors/eclipse/technology/epp/downloads/release/kepler/SR2/eclipse-cpp-kepler-SR2-linux-gtk-x86_64.tar.gz \
     -o eclipse.tar.gz
 tar -xvzf eclipse.tar.gz
 rm eclipse.tar.gz
 
-echo "installing eclipse to location"
+echo "==> installing eclipse to location"
 mv eclipse /opt
 mv ~/eclipse.desktop /usr/share/applications
 mv ~/eclipse-nice.sh /usr/bin
 mv ~/eclipse.gtkrc /opt/eclipse
 chmod a+x /usr/bin/eclipse-nice.sh
 
-echo "set workspace manually"
+# this is a really evil hack
+ECLIPSE_FOLDER_NAME=org.eclipse.platform_4.3.2_1473617060_linux_gtk_x86_64
+# I wish Eclipse was better scriptable...
+echo "==> set workspace manually"
 mkdir -p ~/.eclipse/$ECLIPSE_FOLDER_NAME
 cp -r /opt/eclipse/configuration ~/.eclipse/$ECLIPSE_FOLDER_NAME
 mkdir -p ~/.eclipse/$ECLIPSE_FOLDER_NAME/configuration/.settings
@@ -26,7 +28,7 @@ chown -R rca ~/.eclipse
 #   - PyDev for Eclipse
 #   - Eclipse Xml Editors and Tools
 #   - Eclipse Swing Designer
-echo "install the required eclipse plug-ins"
+echo "==> install the required eclipse plug-ins"
 /opt/eclipse/eclipse \
 -application org.eclipse.equinox.p2.director \
 -noSplash \
