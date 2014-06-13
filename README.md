@@ -1,59 +1,62 @@
-RCA vagrant boxes
-=================
+RCA Virtual Machines
+====================
 
-Packer definitions for vagrant VirtualBox boxes used for xpcc and eurobot development.
+Packer definitions for VirtualBox virtual machines based on Ubuntu 14.04 LTS server used for *xpcc* and *EUROBOT* development.
 
-The ``xpcc-vm.box`` is based on the Ubuntu 12.04 LTS Server distro.
-It is used to compile and test xpcc without a GUI.
+The `xpcc-vm.box` is a headless VM, which provides all required tools for the development of our [xpcc microcontroller framework](xpcc.io).
 
-The ``eurobot-vm.box`` is based on the Ubuntu 12.04 LTS Alternate distro.
-It incorporates all software in ``xpcc-vm.box``, but has a GUI with the Eclipse IDE and is used to develop our software for the Eurobot competition.
+The `eurobot-vm.box` incorporates all software in `xpcc-vm.box`, but has the Xubuntu Desktop with the Eclipse IDE and is used to develop our software for the EUROBOT competition.  
+
+(We have to use the Xfce desktop, since Unity is too slow in a VM for practical use.)
 
 
 Getting Started
 ===============
 
-You need [Packer](http://www.packer.io/docs/installation.html), [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and optionally [Vagrant](http://www.vagrantup.com/downloads.html) installed on your system.
+You need [Packer](http://www.packer.io/docs/installation.html), [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and [Vagrant](http://www.vagrantup.com/downloads.html) installed on your system.
 
-If you are running OS X, you can install Packer using [Homebrew](http://brew.sh):
+If you are running OS X, you can install Packer using [Homebrew](http://brew.sh) and Vagrant and VirtualBox using [Homebrew Cask](http://caskroom.io):
 
-	$ brew tap homebrew/binary
-	$ brew install packer
+	brew tap homebrew/binary
+	brew install packer
+	
+	brew install caskroom/cask/brew-cask
+	brew install vagrant virtualbox
 
 To build the ``xpcc-vm.box``:
 
-	cd rca-vm/descriptions
+	cd rca-vm/
 	packer build xpcc-vm.json
-	cd ../
 
 To build the ``eurobot-vm.box``:
 
-	cd rca-vm/descriptions
+	cd rca-vm/
 	packer build eurobot-vm.json
-	cd ../
 
-You can import the boxes manually into VirtualBox, however VM management with vagrant is *strongly* recommended.
+You can import the boxes into VirtualBox manually, however, using Vagrant as a management tool is ***strongly*** recommended!
 
-Import the boxes into vagrant:
+After building, import the boxes into Vagrant:
 
-	cd rca-vm
-	vagrant box add xpcc xpcc-vm.box
-	vagrant box add eurobot eurobot-vm.box
+	cd rca-vm/
+	vagrant box add xpcc box/xpcc-vm.box
+	vagrant box add eurobot box/eurobot-vm.box
 
 Then you can start the xpcc-vm from any suitable location:
 
+	mkdir xpcc-vm
+	cd xpcc-vm
 	vagrant init xpcc
 	vagrant up
 	vagrant ssh
 
 To use the eurobot-vm, do the same in a different location:
 
+	mkdir eurobot-vm
+	cd eurobot-vm
 	vagrant init eurobot
 	vagrant up
-	# no need for vagrant ssh, the GUI will pop up.
+	# no need for `vagrant ssh`, the GUI will pop up.
 
-Credit
-======
+Consult the documentation on [Vagrant's CLI](http://docs.vagrantup.com/v2/cli/index.html) for a proficient use of the tool.
 
-These definitions were adapted from GitHub user [misheska](https://github.com/misheska/basebox-packer), unfortunately without a license.
-
+We plan to host both VMs as prepacked boxes managed by Vagrant in the near future.
