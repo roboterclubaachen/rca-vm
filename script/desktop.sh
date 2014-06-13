@@ -1,9 +1,9 @@
 #!/bin/bash
 
 echo "==> Installing ubunutu-desktop"
-#    apt-get install -y --no-install-recommends ubuntu-desktop
+apt-get install -y --no-install-recommends ubuntu-desktop
 #    apt-get install -y gnome-terminal
-apt-get install -y ubuntu-desktop
+#apt-get install -y ubuntu-desktop
 
 USERNAME=rca
 LIGHTDM_CONFIG=/etc/lightdm/lightdm.conf

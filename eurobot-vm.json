@@ -13,7 +13,7 @@
   {
     "vm_name": "eurobot-vm-14.04",
     "type": "virtualbox-iso",
-    "http_directory": "files",
+    "http_directory": "http",
     "iso_url": "{{ user `iso_url` }}",
     "iso_checksum": "{{ user `iso_checksum` }}",
     "iso_checksum_type": "sha1",
@@ -70,27 +70,27 @@
   },
   {
     "type": "file",
-    "source": "files/busblaster-ktlink.cfg",
+    "source": "http/busblaster-ktlink.cfg",
     "destination": "~/busblaster-ktlink.cfg"
   },{
     "type": "file",
-    "source": "files/40-openocd.rules",
+    "source": "http/40-openocd.rules",
     "destination": "~/40-openocd.rules"
   },{
     "type": "file",
-    "source": "files/eclipse.desktop",
+    "source": "http/eclipse.desktop",
     "destination": "~/eclipse.desktop"
   },{
     "type": "file",
-    "source": "files/eclipse.gtkrc",
+    "source": "http/eclipse.gtkrc",
     "destination": "~/eclipse.gtkrc"
   },{
     "type": "file",
-    "source": "files/eclipse-nice.sh",
+    "source": "http/eclipse-nice.sh",
     "destination": "~/eclipse-nice.sh"
   },{
     "type": "file",
-    "source": "files/org.eclipse.ui.ide.prefs",
+    "source": "http/org.eclipse.ui.ide.prefs",
     "destination": "~/org.eclipse.ui.ide.prefs"
   },
   {
@@ -120,7 +120,7 @@
   {
     "type": "vagrant",
     "keep_input_artifact": false,
-    "vagrantfile_template": "vagrantfile/vagrantfile-eurobot.template",
-    "output": "../eurobot-vm.box"
+    "vagrantfile_template": "tpl/vagrantfile-eurobot.tpl",
+    "output": "box/eurobot-vm.box"
   }]
 }

@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-    config.vm.define "vagrant-ubuntu1204-server"
+    config.vm.define "vagrant-ubuntu1404-server"
     config.vm.box = "xpcc-vm"
     config.ssh.username = "rca"
 
