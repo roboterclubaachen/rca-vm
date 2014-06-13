@@ -1,9 +1,5 @@
 {
   "variables": {
-    "cm": "nocm",
-    "cm_version": "",
-    "cm_set_path": "",
-    "cleanup_pause": "",
     "headless": "",
     "auto_upgrade": "",
     "iso_url": "http://releases.ubuntu.com/trusty/ubuntu-14.04-server-amd64.iso",
@@ -50,8 +46,7 @@
     "disk_size": 10140,
     "vboxmanage": [
       ["modifyvm", "{{.Name}}", "--memory", "2048"],
-      ["modifyvm", "{{.Name}}", "--cpus", "4"],
-      ["modifyvm", "{{.Name}}", "--accelerate3d", "on"]
+      ["modifyvm", "{{.Name}}", "--cpus", "2"]
     ]
   }],
   "provisioners": [

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "==> Installing ubunutu-desktop"
-apt-get install -y --no-install-recommends ubuntu-desktop
+apt-get install -y --no-install-recommends xubuntu-desktop
 #    apt-get install -y gnome-terminal
 #apt-get install -y ubuntu-desktop
 
