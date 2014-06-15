@@ -1,8 +1,7 @@
 #!/bin/bash
 
-echo "==> Installing ubunutu-desktop"
-apt-get install -y --no-install-recommends xubuntu-desktop
-#    apt-get install -y gnome-terminal
+echo "==> Installing xubunutu-desktop"
+apt-get install -y xubuntu-desktop
 #apt-get install -y ubuntu-desktop
 
 USERNAME=rca

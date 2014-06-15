@@ -9,12 +9,3 @@ dbus-launch --auto-syntax gsettings set org.gnome.libgnomekbd.keyboard layouts \
 "['de', 'us']"
 
 # update the launchers on the dock
-dbus-launch --auto-syntax gsettings set com.canonical.Unity.Launcher favorites \
-"[\
-'ubiquity-gtkui.desktop',\
-'nautilus-home.desktop',\
-'firefox.desktop',\
-'gnome-control-center.desktop',\
-'eclipse.desktop',\
-'gnome-terminal.desktop'\
-]"
