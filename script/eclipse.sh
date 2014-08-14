@@ -32,11 +32,12 @@ echo "==> install the required eclipse plug-ins"
 /opt/eclipse/eclipse \
 -application org.eclipse.equinox.p2.director \
 -noSplash \
+-destination /opt/eclipse \
 -repository \
 http://download.eclipse.org/releases/kepler,\
 http://pydev.org/updates \
--installIUs \
-org.eclipse.jdt.feature.group,\
+-installIUs org.eclipse.jdt.feature.group,\
 org.python.pydev.feature.feature.group,\
 org.eclipse.wst.xml_ui.feature.feature.group,\
-org.eclipse.wb.swing.feature.feature.group
+org.eclipse.wb.swing.feature.feature.group \
+-tag rca-plugin-v1.0
