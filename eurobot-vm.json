@@ -56,9 +56,26 @@
     "scripts": [
       "script/base.sh",
       "script/vagrant.sh",
-      "script/sshd.sh",
-      "script/desktop.sh",
+      "script/sshd.sh"
+    ]
+  },
+  {
+    "type": "file",
+    "source": "http/xfce4",
+    "destination": "~/xfce4.test"
+  },
+  {
+    "type": "file",
+    "source": "http/wallpaper_captain.jpg",
+    "destination": "~/wallpaper_captain.jpg"
+  },
+  {
+    "type": "shell",
+    "execute_command": "echo 'rca' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
+    "scripts": [
+      "script/xfce.sh",
       "script/vmtools.sh",
+      "script/tools.sh",
       "script/xpcc.sh",
       "script/java.sh"
     ]
@@ -94,13 +111,6 @@
     "scripts": [
       "script/xpcc_files.sh",
       "script/eclipse.sh"
-    ]
-  },
-  {
-    "type": "shell",
-    "execute_command": "echo 'rca' | {{.Vars}} sudo -u rca -E -S bash '{{.Path}}'",
-    "scripts": [
-      "script/desktop_dbus.sh"
     ]
   },
   {
