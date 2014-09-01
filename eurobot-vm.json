@@ -84,6 +84,7 @@
     "type": "shell",
     "execute_command": "bash '{{.Path}}'",
     "scripts": [
+      "script/gedit.sh",
       "script/zsh.sh"
     ]
   },
