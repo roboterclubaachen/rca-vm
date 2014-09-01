@@ -18,23 +18,14 @@ subversion libusb-1.0-0-dev python-pip libftdi-dev libtool
 apt-get build-dep -y dfu-util
 apt-get --no-install-recommends install -y doxygen
 pip install --user bitarray
+# pip seems to screw up the file permissions
+chown rca:rca -R .local
 
 # The tipc kernel modul has to be enabled manually
 sh -c 'echo "tipc" >> /etc/modules'
 
-# install openocd from source
-cd
-git clone git://git.code.sf.net/p/openocd/code openocd
-cd openocd/
-git checkout v0.8.0
-./bootstrap
-./configure --enable-maintainer-mode --enable-ft2232_libftdi  --enable-stlink \
---enable-buspirate --prefix=/opt/openocd --disable-option-checking
-make
-make install
-cd
-echo "export PATH=\$PATH:/opt/openocd/bin/" >> ~/.bashrc
-rm -rf ~/openocd
+# install openocd from repository
+apt-get install openocd
 
 # build gitslave from source
 sudo apt-get install -y libterm-progressbar-perl libparallel-iterator-perl
