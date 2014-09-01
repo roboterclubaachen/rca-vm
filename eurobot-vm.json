@@ -81,6 +81,13 @@
     ]
   },
   {
+    "type": "shell",
+    "execute_command": "bash '{{.Path}}'",
+    "scripts": [
+      "script/zsh.sh"
+    ]
+  },
+  {
     "type": "file",
     "source": "http/busblaster-ktlink.cfg",
     "destination": "~/busblaster-ktlink.cfg"
