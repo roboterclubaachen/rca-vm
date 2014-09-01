@@ -3,6 +3,9 @@
 sudo apt-get install -y software-properties-common
 add-apt-repository ppa:terry.guo/gcc-arm-embedded
 apt-get -y update
+# gcc version needs to specified
+# see https://bugs.launchpad.net/gcc-arm-embedded/+bug/1309060
+apt-get install gcc-arm-none-eabi=4-8-2014q2-0trusty10
 
 # install required packages
 apt-get install -y python-dev scons python-jinja2 python-lxml graphviz git \
@@ -10,7 +13,7 @@ git-flow gitk build-essential libboost-thread-dev libboost-system-dev meld \
 libasio-dev gcc-avr binutils-avr avr-libc pandoc avrdude curl gitg gcc texinfo \
 markdown python-docutils libusb-dev dfu-programmer bash-completion picocom \
 libgtkmm-2.4-dev libreadline-dev libsdl1.2-dev libsdl-image1.2-dev git-core \
-subversion libusb-1.0-0-dev python-pip gcc-arm-none-eabi libftdi-dev libtool
+subversion libusb-1.0-0-dev python-pip libftdi-dev libtool
 
 apt-get build-dep -y dfu-util
 apt-get --no-install-recommends install -y doxygen
