@@ -1,0 +1,9 @@
+# Packer
+packer_cache/
+box/
+build.hwm
+build.pwd
+build.pwi
+
+# gedit
+*~

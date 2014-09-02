@@ -1,3 +1,7 @@
+# use ftp.halifax.rwth-aachen.de as source
+sed -i 's/us.archive.ubuntu.com/ftp.halifax.rwth-aachen.de/' /etc/apt/sources.list
+sed -i 's/security.ubuntu.com/ftp.halifax.rwth-aachen.de/' /etc/apt/sources.list
+
 apt-get -y update
 apt-get -y upgrade
 apt-get -y install curl

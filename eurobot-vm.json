@@ -2,8 +2,8 @@
   "variables": {
     "headless": "",
     "auto_upgrade": "",
-    "iso_url": "http://releases.ubuntu.com/trusty/ubuntu-14.04-server-amd64.iso",
-    "iso_checksum": "4d94f6111b8fe47da94396180ce499d8c0bb44f3"
+    "iso_url": "http://ftp.halifax.rwth-aachen.de/ubuntu-releases/trusty/ubuntu-14.04.1-server-amd64.iso",
+    "iso_checksum": "401c5f6666fe2879ac3a9a3247b487723410cf88"
   },
   "builders": [
   {
@@ -14,7 +14,7 @@
     "iso_checksum": "{{ user `iso_checksum` }}",
     "iso_checksum_type": "sha1",
     "guest_os_type": "Ubuntu_64",
-    "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
+    "guest_additions_mode": "disable",
     "virtualbox_version_file": ".vbox_version",
     "ssh_username": "rca",
     "ssh_password": "rca",
@@ -56,11 +56,36 @@
     "scripts": [
       "script/base.sh",
       "script/vagrant.sh",
-      "script/sshd.sh",
-      "script/desktop.sh",
+      "script/sshd.sh"
+    ]
+  },
+  {
+    "type": "file",
+    "source": "http/xfce4",
+    "destination": "~/xfce4.test"
+  },
+  {
+    "type": "file",
+    "source": "http/wallpaper_captain.jpg",
+    "destination": "~/wallpaper_captain.jpg"
+  },
+  {
+    "type": "shell",
+    "execute_command": "echo 'rca' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
+    "scripts": [
+      "script/xfce.sh",
       "script/vmtools.sh",
+      "script/tools.sh",
       "script/xpcc.sh",
       "script/java.sh"
+    ]
+  },
+  {
+    "type": "shell",
+    "execute_command": "bash '{{.Path}}'",
+    "scripts": [
+      "script/gedit.sh",
+      "script/zsh.sh"
     ]
   },
   {
@@ -94,13 +119,6 @@
     "scripts": [
       "script/xpcc_files.sh",
       "script/eclipse.sh"
-    ]
-  },
-  {
-    "type": "shell",
-    "execute_command": "echo 'rca' | {{.Vars}} sudo -u rca -E -S bash '{{.Path}}'",
-    "scripts": [
-      "script/desktop_dbus.sh"
     ]
   },
   {
