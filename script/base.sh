@@ -11,5 +11,6 @@ apt-get clean
 
 VAGRANT_USER=rca
 usermod -aG dialout $VAGRANT_USER
+usermod -aG plugdev $VAGRANT_USER
 groupadd vboxsf
 usermod -aG vboxsf $VAGRANT_USER
