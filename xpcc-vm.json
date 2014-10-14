@@ -63,12 +63,12 @@
   },
   {
     "type": "file",
-    "source": "files/40-openocd.rules",
+    "source": "http/40-openocd.rules",
     "destination": "~/40-openocd.rules"
   },
   {
     "type": "file",
-    "source": "files/busblaster-ktlink.cfg",
+    "source": "http/busblaster-ktlink.cfg",
     "destination": "~/busblaster-ktlink.cfg"
   },
   {
