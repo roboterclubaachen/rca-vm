@@ -5,4 +5,14 @@
 # Browser: firefox
 
 
-apt-get install -y xfce4-terminal ristretto firefox
+apt-get install -y xfce4-terminal ristretto firefox cutecom python-serial \
+picocom
+
+# install grabserial
+cd ~
+git clone https://github.com/tbird20d/grabserial.git
+cd grabserial/
+sudo python setup.py install
+cd ~
+rm -rf ~/grabserial
+
