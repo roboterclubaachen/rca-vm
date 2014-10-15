@@ -1,7 +1,7 @@
 VAGRANT_USER=rca
 
 echo "==> download and expand eclipse"
-curl http://ftp.wh2.tu-dresden.de/pub/mirrors/eclipse/technology/epp/downloads/release/kepler/SR2/eclipse-cpp-kepler-SR2-linux-gtk-x86_64.tar.gz \
+curl http://ftp.halifax.rwth-aachen.de/eclipse/technology/epp/downloads/release/kepler/SR2/eclipse-cpp-kepler-SR2-linux-gtk-x86_64.tar.gz \
     -o eclipse.tar.gz
 tar -xvzf eclipse.tar.gz
 rm eclipse.tar.gz
