@@ -9,6 +9,9 @@ apt-get install -y thunar-archive-plugin thunar-media-tags-plugin xfce4-whiskerm
 # move backround image to backgrounds directory
 mv wallpaper_captain.jpg /usr/share/backgrounds/xfce/
 
+# disable screensaver
+echo "mode:off\nselected:-1" > ~/.xscreensaver
+
 USERNAME=rca
 SLIM_CONFIG=/etc/slim.conf
 
