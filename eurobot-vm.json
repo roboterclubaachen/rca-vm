@@ -118,7 +118,8 @@
     "execute_command": "echo 'rca' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
     "scripts": [
       "script/xpcc_files.sh",
-      "script/eclipse.sh"
+      "script/eclipse.sh",
+      "script/repositories.sh"
     ]
   },
   {
