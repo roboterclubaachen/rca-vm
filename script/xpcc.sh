@@ -5,7 +5,8 @@ add-apt-repository ppa:terry.guo/gcc-arm-embedded
 apt-get -y update
 # gcc version needs to specified
 # see https://bugs.launchpad.net/gcc-arm-embedded/+bug/1309060
-apt-get install gcc-arm-none-eabi=4-8-2014q2-0trusty10
+# update 18-10-14: supplying version may not be needed anymore
+apt-get install -y gcc-arm-none
 
 # install required packages
 apt-get install -y python-dev scons python-jinja2 python-lxml graphviz git \
@@ -25,7 +26,7 @@ chown rca:rca -R .local
 sh -c 'echo "tipc" >> /etc/modules'
 
 # install openocd from repository
-apt-get install openocd
+apt-get install -y openocd
 
 # build gitslave from source
 sudo apt-get install -y libterm-progressbar-perl libparallel-iterator-perl
