@@ -8,6 +8,8 @@ echo "DISABLE_UPDATE_PROMPT=true" >> ~/.zshrc
 # pygments
 sudo apt-get install -y python-pygments
 echo 'alias dog="pygmentize -O style=native -f console256"' >> ~/.zshrc
+# ack-grep alias
+echo 'alias ack=ack-grep' >> ~/.zshrc
 # change login shell
 chsh -s /bin/zsh <<EOF
 rca
