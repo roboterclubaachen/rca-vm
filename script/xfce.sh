@@ -15,7 +15,7 @@ mv wallpaper_captain.jpg /usr/share/backgrounds/xfce/
 # disable screensaver
 echo "mode:off" > ~/.xscreensaver
 
-mv ~/xfce4 .config/
+mv ~/xfce4 ~/.config/xfce4
 
 USERNAME=rca
 SLIM_CONFIG=/etc/slim.conf
