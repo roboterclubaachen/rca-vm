@@ -62,7 +62,7 @@
   {
     "type": "file",
     "source": "http/xfce4",
-    "destination": "~/xfce4.test"
+    "destination": "~/xfce4"
   },
   {
     "type": "file",

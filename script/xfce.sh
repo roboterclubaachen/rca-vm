@@ -10,7 +10,9 @@ apt-get install -y thunar-archive-plugin thunar-media-tags-plugin xfce4-whiskerm
 mv wallpaper_captain.jpg /usr/share/backgrounds/xfce/
 
 # disable screensaver
-echo "mode:off\nselected:-1" > ~/.xscreensaver
+echo "mode:off" > ~/.xscreensaver
+
+mv ~/xfce4 .config/
 
 USERNAME=rca
 SLIM_CONFIG=/etc/slim.conf
