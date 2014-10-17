@@ -6,6 +6,9 @@ apt-get install -y xfce4 slim xubuntu-icon-theme shimmer-themes xfce4-places-plu
 # file manager plugins and better program menu
 apt-get install -y thunar-archive-plugin thunar-media-tags-plugin xfce4-whiskermenu-plugin
 
+# install keyboard layout chooser
+apt-get install -y xfce4-xkb-plugin
+
 # move backround image to backgrounds directory
 mv wallpaper_captain.jpg /usr/share/backgrounds/xfce/
 
