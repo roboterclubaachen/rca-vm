@@ -17,5 +17,7 @@ Vagrant.configure("2") do |config|
         v.customize ["modifyvm", :id, "--rtcuseutc", "on"]
         v.customize ["modifyvm", :id, "--accelerate3d", "on"]
         v.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
+        v.customize ["modifyvm", :id, "--usb", "on"]
+        #v.customize ["modifyvm", :id, "--usbehci", "on"]
     end
 end

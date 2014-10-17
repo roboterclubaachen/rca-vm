@@ -9,5 +9,8 @@ Vagrant.configure("2") do |config|
     config.vm.provider :virtualbox do |v, override|
         v.customize ["modifyvm", :id, "--memory", 1024]
         v.customize ["modifyvm", :id, "--cpus", 2]
+        v.customize ["modifyvm", :id, "--ioapic", "on"]
+        v.customize ["modifyvm", :id, "--usb", "on"]
+        #v.customize ["modifyvm", :id, "--usbehci", "on"]
     end
 end
