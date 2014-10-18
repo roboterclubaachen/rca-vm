@@ -1,4 +1,5 @@
 #!/bin/bash
+USERNAME=rca
 
 echo "==> Installing xfce"
 apt-get install -y xfce4 slim xubuntu-icon-theme shimmer-themes xfce4-places-plugin
@@ -11,15 +12,16 @@ apt-get install -y xfce4-xkb-plugin
 
 # disable screensaver
 echo "mode:off" > ~/.xscreensaver
+chown $USERNAME:$USERNAME ~/.xscreensaver
 
 # create special folders like Desktop in home dir, needed later
-xdg-user-dirs-update
+xdg-user-dirs-update --force
 
 # create ~/.config manually because it does not yet exist
 mkdir -p ~/.config
+chown $USERNAME:$USERNAME ~/.config
 mv ~/xfce4 ~/.config/xfce4
 
-USERNAME=rca
 SLIM_CONFIG=/etc/slim.conf
 
 echo "# RCA settings #" >> $SLIM_CONFIG
