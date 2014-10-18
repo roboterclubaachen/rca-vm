@@ -12,6 +12,11 @@ apt-get install -y xfce4-xkb-plugin
 # disable screensaver
 echo "mode:off" > ~/.xscreensaver
 
+# create special folders like Desktop in home dir, needed later
+xdg-users-dirs-update
+
+# create ~/.config manually because it does not yet exist
+mkdir -p ~/.config
 mv ~/xfce4 ~/.config/xfce4
 
 USERNAME=rca
