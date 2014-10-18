@@ -6,7 +6,7 @@ apt-get -y update
 # gcc version needs to specified
 # see https://bugs.launchpad.net/gcc-arm-embedded/+bug/1309060
 # update 18-10-14: supplying version may not be needed anymore
-apt-get install -y gcc-arm-none
+apt-get install -y gcc-arm-none-eabi
 
 # install required packages
 apt-get install -y python-dev scons python-jinja2 python-lxml graphviz git \
