@@ -88,6 +88,10 @@
     "type": "file",
     "source": "http/gitconfig",
     "destination": "~/.gitconfig"
+  },{
+    "type": "file",
+    "source": "http/init.sh",
+    "destination": "~/init.sh"
   },
   {
     "type": "shell",

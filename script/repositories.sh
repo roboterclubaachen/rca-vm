@@ -44,4 +44,7 @@ if [[ -n "$RCA_USER" ]]
 	# symlink to desktop for easier access
 	mkdir -p ~/Desktop/
 	ln -s ~/rcasoftware ~/Desktop/
+	# move the init script to the right place
+	mv ~/init.sh ~/rcasoftware
+
 fi
