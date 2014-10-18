@@ -9,9 +9,6 @@ apt-get install -y thunar-archive-plugin thunar-media-tags-plugin xfce4-whiskerm
 # install keyboard layout chooser
 apt-get install -y xfce4-xkb-plugin
 
-# move backround image to backgrounds directory
-mv wallpaper_captain.jpg /usr/share/backgrounds/xfce/
-
 # disable screensaver
 echo "mode:off" > ~/.xscreensaver
 

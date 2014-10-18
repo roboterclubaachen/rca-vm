@@ -65,11 +65,6 @@
     "destination": "~/xfce4"
   },
   {
-    "type": "file",
-    "source": "http/wallpaper_captain.jpg",
-    "destination": "~/wallpaper_captain.jpg"
-  },
-  {
     "type": "shell",
     "execute_command": "echo 'rca' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
     "scripts": [
