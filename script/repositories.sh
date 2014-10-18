@@ -1,36 +1,46 @@
 #!/bin/bash
 
-export RCA_USER=censored
-export RCA_PASSWORD=censored
-export RCA_REPOSITORY_PATH=censored
-export PAGER=cat
-export GIT_PAGER=cat
-git config --global credential.https://$RCA_REPOSITORY_PATH.helper store
+# enter your RCA account details here
+export RCA_USER=
+export RCA_PASSWORD=
+export RCA_REPOSITORY_URL=
 
-cd
-mkdir ~/rcasoftware
+# this should not break if this is run without user account
+if [[ -n "$RCA_USER" ]]
+  then
+	# disable paging in gitslave which will break the checkout
+	export PAGER=cat
+	export GIT_PAGER=cat
+	# we need to store the credentials for this
+	git config --global credential.https://$RCA_REPOSITORY_URL.helper store
 
-echo
-echo 'Cloning last seasons software repositories...'
-gits clone https://$RCA_USER:$RCA_PASSWORD@$RCA_REPOSITORY_PATH/git/software.git -b season2014 ~/rcasoftware/s2014
+	cd
+	mkdir ~/rcasoftware
 
-echo
-echo 'Cloning the current software repositories...'
-gits clone https://$RCA_REPOSITORY_PATH/git/software.git -b develop ~/rcasoftware/s2015
+	echo
+	echo 'Cloning last seasons software repositories...'
+	gits clone https://$RCA_USER:$RCA_PASSWORD@$RCA_REPOSITORY_URL/git/software.git -b season2014 ~/rcasoftware/s2014
 
-echo
-echo 'Setting up git-flow...'
-cd ~/rcasoftware/s2015/
-gits exec git branch --track master origin/master
-gits exec git flow init -d
+	echo
+	echo 'Cloning the current software repositories...'
+	gits clone https://$RCA_REPOSITORY_URL/git/software.git -b develop ~/rcasoftware/s2015
 
-echo
-echo 'Copying eclipse configuration...'
-cd ~/rcasoftware/s2014/config/eclipse/
-cp -R . ~/rcasoftware/s2014/
-cd ~/rcasoftware/s2015/config/eclipse/
-cp -R . ~/rcasoftware/s2015/
+	echo
+	echo 'Setting up git-flow...'
+	cd ~/rcasoftware/s2015/
+	gits exec git branch --track master origin/master
+	gits exec git flow init -d
 
-rm ~/.git-credentials
-# symlink to desktop for easier access
-ln -s ~/rcasoftware ~/Desktop/
+	echo
+	echo 'Copying eclipse configuration...'
+	cd ~/rcasoftware/s2014/config/eclipse/
+	cp -R . ~/rcasoftware/s2014/
+	cd ~/rcasoftware/s2015/config/eclipse/
+	cp -R . ~/rcasoftware/s2015/
+
+	cd
+	# remove the credentials
+	rm ~/.git-credentials
+	# symlink to desktop for easier access
+	ln -s ~/rcasoftware ~/Desktop/
+fi
