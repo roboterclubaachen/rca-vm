@@ -103,6 +103,10 @@
     "type": "file",
     "source": "http/eclipse-nice.sh",
     "destination": "~/eclipse-nice.sh"
+  },{
+    "type": "file",
+    "source": "http/gitconfig",
+    "destination": "~/gitconfig"
   },
   {
     "type": "shell",

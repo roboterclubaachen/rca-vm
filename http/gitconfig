@@ -1,0 +1,33 @@
+[color]
+	ui = true
+[core]
+	editor = nano
+	autocrlf = input
+[grep]
+	lineNumber = true
+[http]
+	sslverify = false
+[alias]
+	lol = log --pretty=oneline --abbrev-commit --graph --decorate
+	lola = log --pretty=oneline --abbrev-commit --graph --decorate --all
+	pullr = pull --rebase
+	diffc = diff --cached
+	# short forms
+	d = diff
+	dc = diff --cached
+	s = status
+	a = add
+	c = commit
+	l = log
+	# short forms show
+	s0 = show
+	s1 = show HEAD~1
+	s2 = show HEAD~2
+	s3 = show HEAD~3
+	s4 = show HEAD~4
+	s5 = show HEAD~5
+	s6 = show HEAD~6
+	s7 = show HEAD~7
+	s8 = show HEAD~8
+[push]
+	default = simple
