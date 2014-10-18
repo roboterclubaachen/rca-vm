@@ -13,7 +13,7 @@ apt-get install -y xfce4-xkb-plugin
 echo "mode:off" > ~/.xscreensaver
 
 # create special folders like Desktop in home dir, needed later
-xdg-users-dirs-update
+xdg-user-dirs-update
 
 # create ~/.config manually because it does not yet exist
 mkdir -p ~/.config
