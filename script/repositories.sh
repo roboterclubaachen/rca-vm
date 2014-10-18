@@ -27,9 +27,9 @@ gits exec git flow init -d
 echo
 echo 'Copying eclipse configuration...'
 cd ~/rcasoftware/s2014/config/eclipse/
-cp -iRv . ~/rcasoftware/s2014/
+cp -R . ~/rcasoftware/s2014/
 cd ~/rcasoftware/s2015/config/eclipse/
-cp -iRv . ~/rcasoftware/s2015/
+cp -R . ~/rcasoftware/s2015/
 
 rm ~/.git-credentials
 # symlink to desktop for easier access

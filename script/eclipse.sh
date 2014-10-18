@@ -3,7 +3,7 @@ VAGRANT_USER=rca
 echo "==> download and expand eclipse"
 curl http://ftp.halifax.rwth-aachen.de/eclipse//technology/epp/downloads/release/luna/SR1/eclipse-cpp-luna-SR1-linux-gtk-x86_64.tar.gz \
     -o eclipse.tar.gz
-tar -xvzf eclipse.tar.gz
+tar -xzf eclipse.tar.gz
 rm eclipse.tar.gz
 
 echo "==> installing eclipse to location"
