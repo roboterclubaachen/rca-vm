@@ -42,5 +42,6 @@ if [[ -n "$RCA_USER" ]]
 	# remove the credentials
 	rm ~/.git-credentials
 	# symlink to desktop for easier access
+	mkdir -p ~/Desktop/
 	ln -s ~/rcasoftware ~/Desktop/
 fi
