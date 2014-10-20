@@ -5,6 +5,8 @@ export RCA_USER=
 export RCA_PASSWORD=
 export RCA_REPOSITORY_URL=
 
+mkdir -p ~/Desktop
+
 # this should not break if this is run without user account
 if [[ -n "$RCA_USER" ]]
   then
@@ -33,17 +35,16 @@ if [[ -n "$RCA_USER" ]]
 
 	echo
 	echo 'Copying eclipse configuration...'
-	cd ~/rcasoftware/s2014/config/eclipse/
+	cd ~/rcasoftware/s2014/.rca/eclipse/
 	cp -R . ~/rcasoftware/s2014/
-	cd ~/rcasoftware/s2015/config/eclipse/
+	cd ~/rcasoftware/s2015/.rca/eclipse/
 	cp -R . ~/rcasoftware/s2015/
 
 	cd
 	# remove the credentials
 	rm ~/.git-credentials
 	# symlink to desktop for easier access
-	mkdir -p ~/Desktop/
-	ln -s ~/rcasoftware ~/Desktop/
+	ln -s ~/rcasoftware ~/Desktop
 	# move the init script to the right place
 	mv ~/init.sh ~/rcasoftware
 
