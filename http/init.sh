@@ -1,9 +1,10 @@
 #!/bin/bash
 
+echo 'Welcome to the RCA initializer for software development.'
+echo
+
 if [[ ! $(git config --global --get user.name) || ! $(git config --global --get user.email) ]]
   then
-    echo 'Welcome to the RCA initializer for software development.'
-    echo
     echo 'We want your commits to be signed with your name and email.'
     echo 'They will only be stored locally in your ~/.gitconfig file and'
     echo 'only used to sign your changes, when you commit something.'
@@ -32,3 +33,13 @@ if [[ ! $(git config --global --get user.name) || ! $(git config --global --get 
     echo 'Thanks, I have set up git for you.'
     echo
 fi
+
+echo 'I will now update all required software repositories.'
+echo 'Enter your RCA username and password when prompted.'
+cd ~/rcasoftware/s2014/
+gits pull
+cd ~/rcasoftware/s2015/
+gits pull
+echo
+echo 'Done. You may now open Eclipse to start developing.'
+echo
