@@ -5,11 +5,9 @@ export RCA_USER=
 export RCA_PASSWORD=
 export RCA_REPOSITORY_URL=
 
-mkdir -p ~/Desktop
 
 # this should not break if this is run without user account
-if [[ -n "$RCA_USER" ]]
-  then
+if [[ -n "$RCA_USER" ]]; then
 	# disable paging in gitslave which will break the checkout
 	export PAGER=cat
 	export GIT_PAGER=cat
@@ -44,8 +42,15 @@ if [[ -n "$RCA_USER" ]]
 	# remove the credentials
 	rm ~/.git-credentials
 	# symlink to desktop for easier access
+	mkdir -p ~/Desktop
 	ln -s ~/rcasoftware ~/Desktop
 	# move the init script to the right place
+	chmod a+x ~/init.sh
 	mv ~/init.sh ~/rcasoftware
-
+	# move the init script to the right place
+	mv ~/ReadMe.html ~/Desktop
+else
+	# remove both scripts
+	rm ~/init.sh
+	rm ~/ReadMe.html
 fi

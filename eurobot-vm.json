@@ -90,6 +90,10 @@
     "destination": "~/.gitconfig"
   },{
     "type": "file",
+    "source": "http/ReadMe.html",
+    "destination": "~/ReadMe.html"
+  },{
+    "type": "file",
     "source": "http/init.sh",
     "destination": "~/init.sh"
   },
