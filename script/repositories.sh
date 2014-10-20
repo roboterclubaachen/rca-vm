@@ -11,8 +11,8 @@ if [[ -n "$RCA_USER" ]]; then
 	# disable paging in gitslave which will break the checkout
 	export PAGER=cat
 	export GIT_PAGER=cat
-	# we need to store the credentials for this
-	git config --global credential.https://$RCA_REPOSITORY_URL.helper store
+	# we need to cache the credentials for this
+	git config --global credential.https://$RCA_REPOSITORY_URL.helper cache
 
 	cd
 	mkdir ~/rcasoftware
@@ -39,8 +39,6 @@ if [[ -n "$RCA_USER" ]]; then
 	cp -R . ~/rcasoftware/s2015/
 
 	cd
-	# remove the credentials
-	rm ~/.git-credentials
 	# symlink to desktop for easier access
 	mkdir -p ~/Desktop
 	ln -s ~/rcasoftware ~/Desktop
@@ -49,6 +47,11 @@ if [[ -n "$RCA_USER" ]]; then
 	mv ~/init.sh ~/rcasoftware
 	# move the init script to the right place
 	mv ~/ReadMe.html ~/Desktop
+
+	# manually exit the deamon
+	git credential-cache exit
+	# cache the credentials from now on
+	git config --global credential.https://$RCA_REPOSITORY_URL.helper store
 else
 	# remove both scripts
 	rm ~/init.sh
