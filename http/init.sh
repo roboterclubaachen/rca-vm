@@ -22,6 +22,9 @@ if [[ ! $(git config --global --get user.name) || ! $(git config --global --get 
     read GIT_PSEUDONYM
     if [[ -n $GIT_PSEUDONYM ]]
       then
+        cd ~/rcasoftware/s2013/xpcc/
+        git config user.name "$GIT_PSEUDONYM"
+        git config user.email "$GIT_PSEUDONYM"
         cd ~/rcasoftware/s2014/xpcc/
         git config user.name "$GIT_PSEUDONYM"
         git config user.email "$GIT_PSEUDONYM"
@@ -36,6 +39,8 @@ fi
 
 echo 'I will now update all required software repositories.'
 echo 'Enter your RCA username and password when prompted.'
+cd ~/rcasoftware/s2013/
+gits pull
 cd ~/rcasoftware/s2014/
 gits pull
 cd ~/rcasoftware/s2015/
