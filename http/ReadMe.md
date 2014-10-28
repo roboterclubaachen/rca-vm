@@ -1,31 +1,27 @@
 RoboterClub Aachen Virtual Machine
 ==================================
 
+TL;DR
+-----
+
+To start double-click on the **`init.sh`** script on the desktop and follow its instructions.
+
+You may then launch eclipse and check out our projects.
+
+Both the username and password of the Virtual Machine is **`rca`**.
+
+
+Details
+-------
+
 Hello and welcome to the RCA VM codename **Robuntu**.  
 This machine contains all the tools that are required for software development
 of our robots.  
 Most of this work is done in the terminal using command line tools.
 
-We prepared a script that will take you through setting up Git.  
-Both the username and password of the Virtual Machine is **`rca`**.
-
-To start, please open the terminal, copy this command into it (*with Ctrl-Shift-V*)
-and press enter:
-
-    ~/rcasoftware/init.sh
-
-This script will ask you for your name, email and pseudonym for software development.  
-It will also update the software repositories, will requires your username and password that you got when signing up with the RCA.
-
-You may then launch eclipse and check out our projects.
-
 We recommend that you let us help you with your first steps, so that it is less
 frustrating for you if something does not work how you want it.  
 We can help and show you how we use it.
-
-
-Additional Information
-----------------------
 
 When a new VM with new tools is released, we will provide you with instructions
 to upgrade your existing VM whenever possible.  
