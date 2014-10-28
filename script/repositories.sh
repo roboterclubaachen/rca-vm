@@ -11,15 +11,16 @@ if [[ -n "$RCA_USER" ]]; then
 	# disable paging in gitslave which will break the checkout
 	export PAGER=cat
 	export GIT_PAGER=cat
-	# we need to cache the credentials for this
-	git config --global credential.https://$RCA_REPOSITORY_URL.helper cache
+	# we need to store the credentials for this
+	git config --global credential.https://$RCA_REPOSITORY_URL.helper store
 
 	cd
 	mkdir ~/rcasoftware
 
 	echo
 	echo 'Cloning last seasons software repositories...'
-	gits clone https://$RCA_USER:$RCA_PASSWORD@$RCA_REPOSITORY_URL/git/software.git -b season2014 ~/rcasoftware/s2014
+	gits clone https://$RCA_USER:$RCA_PASSWORD@$RCA_REPOSITORY_URL/git/software.git -b season2013 ~/rcasoftware/s2013
+	gits clone https://$RCA_REPOSITORY_URL/git/software.git -b season2014 ~/rcasoftware/s2014
 
 	echo
 	echo 'Cloning the current software repositories...'
@@ -33,6 +34,8 @@ if [[ -n "$RCA_USER" ]]; then
 
 	echo
 	echo 'Copying eclipse configuration...'
+	cd ~/rcasoftware/s2013/.rca/eclipse/
+	cp -R . ~/rcasoftware/s2013/
 	cd ~/rcasoftware/s2014/.rca/eclipse/
 	cp -R . ~/rcasoftware/s2014/
 	cd ~/rcasoftware/s2015/.rca/eclipse/
@@ -48,10 +51,10 @@ if [[ -n "$RCA_USER" ]]; then
 	# move the init script to the right place
 	mv ~/ReadMe.html ~/Desktop
 
-	# manually exit the deamon
-	git credential-cache exit
-	# cache the credentials from now on
-	git config --global credential.https://$RCA_REPOSITORY_URL.helper store
+	# and because we are stupid this happens
+	find ~/rcasoftware/s2013/.git/ -type f -readable -writable -exec sed -i "s/$RCA_USER:$RCA_PASSWORD@$RCA_REPOSITORY_URL/$RCA_REPOSITORY_URL/g" {} \;
+	# delete the credentials file
+	rm ~/.git-credentials
 else
 	# remove both scripts
 	rm ~/init.sh
