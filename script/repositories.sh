@@ -48,6 +48,13 @@ if [[ -n "$RCA_USER" ]]; then
 	# move the init script to the right place
 	chmod a+x ~/init.sh
 	mv ~/init.sh ~/rcasoftware
+	# move the season tabs around
+	chmod a+x ~/Season2013
+	chmod a+x ~/Season2014
+	chmod a+x ~/Season2015
+	mv ~/Season2013 ~/Desktop
+	mv ~/Season2014 ~/Desktop
+	mv ~/Season2015 ~/Desktop
 	# move the init script to the right place
 	mv ~/ReadMe.html ~/Desktop
 
@@ -59,4 +66,7 @@ else
 	# remove both scripts
 	rm ~/init.sh
 	rm ~/ReadMe.html
+	rm ~/Season2013
+	rm ~/Season2014
+	rm ~/Season2015
 fi

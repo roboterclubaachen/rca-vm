@@ -98,6 +98,18 @@
     "destination": "~/ReadMe.html"
   },{
     "type": "file",
+    "source": "http/Season2013",
+    "destination": "~/Season2013"
+  },{
+    "type": "file",
+    "source": "http/Season2014",
+    "destination": "~/Season2014"
+  },{
+    "type": "file",
+    "source": "http/Season2015",
+    "destination": "~/Season2015"
+  },{
+    "type": "file",
     "source": "http/init.sh",
     "destination": "~/init.sh"
   },

@@ -1,0 +1,6 @@
+#!/bin/zsh
+
+xfce4-terminal -T "Bot Control" --working-directory=/home/rca/rcasoftware/s2014/bot_control/ \
+--tab -T "Big" --working-directory=/home/rca/rcasoftware/s2014/season/big/projects/drive/ \
+--tab -T "Little" --working-directory=/home/rca/rcasoftware/s2014/season/little/projects/drive/ \
+--tab -T "Simulator" --working-directory=/home/rca/rcasoftware/s2014/simulator/src
