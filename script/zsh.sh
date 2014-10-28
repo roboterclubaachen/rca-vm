@@ -14,3 +14,6 @@ echo 'alias ack=ack-grep' >> ~/.zshrc
 chsh -s /bin/zsh <<EOF
 rca
 EOF
+
+# add our configurations to zshrc
+echo "source ~/.rcarc" >> ~/.zshrc
