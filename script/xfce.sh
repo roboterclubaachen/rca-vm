@@ -29,3 +29,6 @@ echo "################" >> $SLIM_CONFIG
 echo "numlock on" >> $SLIM_CONFIG
 echo "default_user ${USERNAME}" >> $SLIM_CONFIG
 echo "auto_login yes" >> $SLIM_CONFIG
+
+# add our configurations to zshrc
+echo "source ~/.rcarc" >> ~/.zshrc

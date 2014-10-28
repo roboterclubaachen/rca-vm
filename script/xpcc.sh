@@ -35,3 +35,6 @@ cd gitslave/
 sudo make install
 cd
 rm -rf ~/gitslave
+
+# add our configurations to bashrc
+echo "source ~/.rcarc" >> ~/.bashrc
