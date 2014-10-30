@@ -25,9 +25,17 @@ echo "==> install the required eclipse plug-ins"
 -destination /opt/eclipse \
 -repository \
 http://download.eclipse.org/releases/kepler,\
-http://pydev.org/updates \
+http://pydev.org/updates,\
+http://gnuarmeclipse.sourceforge.net/updates \
 -installIUs org.eclipse.jdt.feature.group,\
 org.python.pydev.feature.feature.group,\
 org.eclipse.wst.xml_ui.feature.feature.group,\
-org.eclipse.wb.swing.feature.feature.group \
--tag rca-plugin-v1.0
+org.eclipse.wb.swing.feature.feature.group,\
+ilg.gnuarmeclipse.managedbuild.cross.feature.group,\
+ilg.gnuarmeclipse.doc.user.feature.group,\
+ilg.gnuarmeclipse.templates.freescale.feature.group,\
+ilg.gnuarmeclipse.templates.cortexm.feature.group,\
+ilg.gnuarmeclipse.templates.stm.feature.group,\
+ilg.gnuarmeclipse.debug.gdbjtag.jlink.feature.group,\
+ilg.gnuarmeclipse.debug.gdbjtag.openocd.feature.group \
+-tag rca-plugin-v1.1
