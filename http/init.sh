@@ -37,6 +37,9 @@ if [[ ! $(git config --global --get user.name) || ! $(git config --global --get 
     echo
 fi
 
+# disable paging for now
+export PAGER=cat
+export GIT_PAGER=cat
 echo 'I will now update all required software repositories.'
 echo 'Enter your RCA username and password when prompted.'
 cd ~/rcasoftware/s2013/
@@ -46,5 +49,5 @@ gits pull
 cd ~/rcasoftware/s2015/
 gits pull
 echo
-echo 'Done. You may now open Eclipse to start developing.'
+echo 'Done. You may now open Eclipse (on the right hand side) to start developing.'
 echo

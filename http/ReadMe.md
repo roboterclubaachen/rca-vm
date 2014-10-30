@@ -4,7 +4,7 @@ RoboterClub Aachen Virtual Machine
 TL;DR
 -----
 
-To start double-click on the **`init.sh`** script on the desktop and follow its instructions.
+To start double-click on the **`Initializer`** on the desktop and follow its instructions.
 
 You may then launch eclipse and check out our projects.
 

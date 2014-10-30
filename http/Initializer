@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+xfce4-terminal -T "Initializer" -x ~/rcasoftware/init.sh

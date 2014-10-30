@@ -110,6 +110,10 @@
     "destination": "~/Season2015"
   },{
     "type": "file",
+    "source": "http/Initializer",
+    "destination": "~/Initializer"
+  },{
+    "type": "file",
     "source": "http/init.sh",
     "destination": "~/init.sh"
   },
