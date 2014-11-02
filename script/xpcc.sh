@@ -1,6 +1,6 @@
 
 # add required repositories
-sudo apt-get install -y software-properties-common
+apt-get install -y software-properties-common
 add-apt-repository ppa:terry.guo/gcc-arm-embedded
 apt-get -y update
 # gcc version needs to specified

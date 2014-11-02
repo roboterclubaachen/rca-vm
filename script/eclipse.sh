@@ -18,6 +18,7 @@ chmod a+x /usr/bin/eclipse-nice.sh
 #   - PyDev for Eclipse
 #   - Eclipse Xml Editors and Tools
 #   - Eclipse Swing Designer
+#   - All of GNU ARM
 echo "==> install the required eclipse plug-ins"
 /opt/eclipse/eclipse \
 -application org.eclipse.equinox.p2.director \
