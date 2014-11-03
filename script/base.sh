@@ -14,3 +14,6 @@ usermod -aG dialout $VAGRANT_USER
 usermod -aG plugdev $VAGRANT_USER
 groupadd vboxsf
 usermod -aG vboxsf $VAGRANT_USER
+
+# save the build time for errata
+date --utc > ~/.packer_build_date
