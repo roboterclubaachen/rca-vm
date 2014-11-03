@@ -74,6 +74,10 @@
     "destination": "~/40-openocd.rules"
   },{
     "type": "file",
+    "source": "http/eagle.desktop",
+    "destination": "~/eagle.desktop"
+  },{
+    "type": "file",
     "source": "http/eclipse.desktop",
     "destination": "~/eclipse.desktop"
   },{
@@ -127,7 +131,8 @@
       "script/xpcc.sh",
       "script/xpcc_files.sh",
       "script/java.sh",
-      "script/eclipse.sh"
+      "script/eclipse.sh",
+      "script/eagle.sh"
     ]
   },
   {
