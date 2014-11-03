@@ -5,8 +5,7 @@
 # Browser: firefox
 
 
-apt-get install -y xfce4-terminal ristretto firefox cutecom \
-python-serial picocom evince
+apt-get install -y xfce4-terminal ristretto firefox python-serial evince
 
 # install grabserial
 cd ~
