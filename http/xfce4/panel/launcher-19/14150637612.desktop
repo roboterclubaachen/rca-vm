@@ -1,0 +1,10 @@
+[Desktop Entry]
+Categories=Development;Engineering;Electronics;
+Comment=Design a printed circuit board.
+Exec=eagle %U
+GenericName=PCB Designer
+Icon=eagle
+MimeType=application/vnd.cadsoft.eagle.board;application/vnd.cadsoft.eagle.project;application/vnd.cadsoft.eagle.schematic
+Name=Eagle
+Type=Application
+X-XFCE-Source=file:///usr/share/applications/eagle.desktop

@@ -2,8 +2,8 @@
 Encoding=UTF-8
 Name=EAGLE
 Comment=EAGLE
-Exec=/opt/eagle/bin/eagle
-Icon=/opt/eagle/bin/eagleicon50.png
+Exec=/opt/eagle-6.5.0/bin/eagle
+Icon=/opt/eagle-6.5.0/bin/eagleicon50.png
 Terminal=false
 Type=Application
 Categories=GNOME;Application;Development;
