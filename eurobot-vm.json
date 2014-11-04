@@ -74,8 +74,8 @@
     "destination": "~/40-openocd.rules"
   },{
     "type": "file",
-    "source": "http/eagle.desktop",
-    "destination": "~/eagle.desktop"
+    "source": "http/eaglerc",
+    "destination": "~/.eaglerc"
   },{
     "type": "file",
     "source": "http/eclipse.desktop",
