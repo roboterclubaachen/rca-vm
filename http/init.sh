@@ -49,5 +49,10 @@ gits pull
 cd ~/rcasoftware/s2015/
 gits pull
 echo
-echo 'Done. You may now open Eclipse (on the right hand side) to start developing.'
+
+# update subversion
+cd
+cd ~/rcasoftware/roboter/
+svn update
+echo 'Done. You may now open Eclipse or EAGLE (on the right hand side) to start developing.'
 echo
