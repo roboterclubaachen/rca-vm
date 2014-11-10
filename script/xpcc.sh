@@ -11,15 +11,15 @@ apt-get install -y gcc-arm-none-eabi
 # install required packages
 apt-get install -y python-dev scons python-jinja2 python-lxml graphviz git \
 git-flow gitk build-essential libboost-thread-dev libboost-system-dev meld \
-libasio-dev gcc-avr binutils-avr avr-libc pandoc avrdude curl gitg gcc texinfo \
-markdown python-docutils libusb-dev dfu-programmer bash-completion \
+libasio-dev gcc-avr binutils-avr avr-libc pandoc avrdude curl gitg texinfo \
+markdown python-docutils libusb-dev dfu-programmer bash-completion gcc \
 libgtkmm-2.4-dev libreadline-dev libsdl1.2-dev libsdl-image1.2-dev git-core \
 subversion libusb-1.0-0-dev python-pip libftdi-dev libtool ack-grep tree \
-picocom cutecom
+picocom cutecom python-sphinx libjpeg-dev zlib1g-dev
 
 apt-get build-dep -y dfu-util
 apt-get --no-install-recommends install -y doxygen
-pip install --user bitarray
+pip install --user bitarray pillow
 # pip seems to screw up the file permissions
 chown rca:rca -R .local
 
