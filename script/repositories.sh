@@ -101,8 +101,8 @@ if [[ -n "$RCA_USER" ]]; then
 	# season 2015
 	svn update 2015_common --set-depth immediates
 	svn update 2015_common/et --set-depth infinity
-	svn update 2015_Gir --set-depth immediates
-	svn update 2015_Gir/et --set-depth infinity
+	svn update 2015_Phobos --set-depth immediates
+	svn update 2015_Phobos/et --set-depth infinity
 	svn update 2015_hal --set-depth immediates
 	svn update 2015_hal/et --set-depth infinity
 
