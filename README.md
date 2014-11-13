@@ -3,7 +3,7 @@ RCA Virtual Machines
 
 Packer definitions for VirtualBox virtual machines based on Ubuntu 14.04 LTS server used for *xpcc* and *EUROBOT* development.
 
-The `xpcc-vm.box` is a headless VM, which provides all required tools for the development of our [xpcc microcontroller framework](xpcc.io).
+The `xpcc-vm.box` is a headless VM, which provides all required tools for the development of our [xpcc microcontroller framework](http://xpcc.io).
 
 The `eurobot-vm.box` incorporates all software in `xpcc-vm.box`, but has the Xubuntu Desktop with the Eclipse IDE and is used to develop our software for the EUROBOT competition.  
 (We have to use the Xfce desktop, since Unity is too slow in a VM for practical use.)
