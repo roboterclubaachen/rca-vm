@@ -4,15 +4,20 @@ RCA Virtual Machines
 Packer definitions for VirtualBox virtual machines based on Ubuntu 14.04 LTS server used for *xpcc* and *EUROBOT* development.
 
 The `xpcc-vm.box` is a headless VM, which provides all required tools for the development of our [xpcc microcontroller framework](http://xpcc.io).
+We provide you with a packaged version of this box:
 
-The `eurobot-vm.box` incorporates all software in `xpcc-vm.box`, but has the Xubuntu Desktop with the Eclipse IDE and is used to develop our software for the EUROBOT competition.  
+	$ vagrant init http://develop.xpcc.io/xpcc-vm.box
+	$ vagrant up
+
+The `eurobot-vm.box` incorporates all software in `xpcc-vm.box`, but has the Xubuntu Desktop with Java, the Eclipse IDE and EAGLE and is used to develop our software and pcbs for the EUROBOT competition.  
 (We have to use the Xfce desktop, since Unity is too slow in a VM for practical use.)
 
-A few final configuration steps for `eurobot-vm.box` can be omitted:
+A few final manual configuration steps for `eurobot-vm.box` can be omitted:
 
 1. We ship this VM with all our internal software repositories already on disk (done by script/repositories.sh).
 You need to declare the username, password and url of our git server to do this step, otherwise it is ignored.
 2. We import eclipse preferences and project sets manually and then repackage the VM.
+3. We add a license to EAGLE.
 
 
 Getting Started
@@ -63,5 +68,3 @@ To use the eurobot-vm, do the same in a different location:
 	# no need for `vagrant ssh`, the GUI will pop up.
 
 Consult the documentation on [Vagrant's CLI](http://docs.vagrantup.com/v2/cli/index.html) for proficient use of the tool.
-
-We plan to host both VMs as prepacked boxes managed by Vagrant in the future.
