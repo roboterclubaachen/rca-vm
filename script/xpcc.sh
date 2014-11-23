@@ -30,10 +30,10 @@ sh -c 'echo "tipc" >> /etc/modules'
 apt-get install -y openocd
 
 # build gitslave from source
-sudo apt-get install -y libterm-progressbar-perl libparallel-iterator-perl
+apt-get install -y libterm-progressbar-perl libparallel-iterator-perl
 git clone git://gitslave.git.sourceforge.net/gitroot/gitslave/gitslave
 cd gitslave/
-sudo make install
+make install
 cd
 rm -rf ~/gitslave
 
