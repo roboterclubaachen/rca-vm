@@ -1,3 +1,4 @@
+USERNAME=rca
 
 # add required repositories
 apt-get install -y software-properties-common
@@ -21,7 +22,7 @@ apt-get build-dep -y dfu-util
 apt-get --no-install-recommends install -y doxygen
 pip install --user bitarray pillow
 # pip seems to screw up the file permissions
-chown rca:rca -R .local
+chown $USERNAME:$USERNAME -R .local
 
 # The tipc kernel modul has to be enabled manually
 sh -c 'echo "tipc" >> /etc/modules'
