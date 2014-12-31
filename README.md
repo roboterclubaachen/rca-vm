@@ -6,7 +6,7 @@ Packer definitions for VirtualBox virtual machines based on Ubuntu 14.04 LTS ser
 The `xpcc-vm.box` is a headless VM, which provides all required tools for the development of our [xpcc microcontroller framework](http://xpcc.io).
 We provide you with a packaged version of this box:
 
-	$ vagrant init http://develop.xpcc.io/xpcc-vm.box
+	$ vagrant init http://box.xpcc.io/xpcc-vm.box
 	$ vagrant up
 
 The `eurobot-vm.box` incorporates all software in `xpcc-vm.box`, but has the Xubuntu Desktop with Java, the Eclipse IDE and EAGLE and is used to develop our software and pcbs for the EUROBOT competition.  
