@@ -35,24 +35,35 @@ if [[ ! $(git config --global --get user.name) || ! $(git config --global --get 
     echo
     echo 'Thanks, I have set up git for you.'
     echo
+
+    # disable paging for now
+    export PAGER=cat
+    export GIT_PAGER=cat
+    echo 'I will now update all required software repositories.'
+    echo 'Enter your RCA username and password when prompted.'
+
+    cd ~/rcasoftware/s2013/
+    gits populate
+    gits fetch --all
+    gits reset --hard origin/develop
+    cd ~/rcasoftware/s2014/
+    gits populate
+    gits fetch --all
+    gits reset --hard origin/develop
+    cd ~/rcasoftware/s2015/
+    gits populate
+    gits fetch --all
+    gits reset --hard origin/develop
+    echo
+
+    # update subversion
+    cd
+    cd ~/rcasoftware/roboter/
+    svn update
+
+    echo
+    echo 'Done. You may now open Eclipse or EAGLE (on the right hand side) to start developing.'
+    echo
+else
+    echo 'I cowardly refuse to run this script again.'
 fi
-
-# disable paging for now
-export PAGER=cat
-export GIT_PAGER=cat
-echo 'I will now update all required software repositories.'
-echo 'Enter your RCA username and password when prompted.'
-cd ~/rcasoftware/s2013/
-gits pull
-cd ~/rcasoftware/s2014/
-gits pull
-cd ~/rcasoftware/s2015/
-gits pull
-echo
-
-# update subversion
-cd
-cd ~/rcasoftware/roboter/
-svn update
-echo 'Done. You may now open Eclipse or EAGLE (on the right hand side) to start developing.'
-echo
