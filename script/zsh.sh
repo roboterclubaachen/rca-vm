@@ -4,7 +4,8 @@ sudo apt-get install -y zsh git
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 # automatic updates
-echo "DISABLE_UPDATE_PROMPT=true" >> ~/.zshrc
+echo "DISABLE_UPDATE_PROMPT=\"true\"" >> ~/.zshrc
+echo "DISABLE_AUTO_UPDATE=\"true\"" >> ~/.zshrc
 # pygments
 sudo apt-get install -y python-pygments
 echo 'alias dog="pygmentize -O style=native -f console256"' >> ~/.zshrc
