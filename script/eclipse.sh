@@ -23,7 +23,7 @@ echo "==> install the required eclipse plug-ins"
 -noSplash \
 -destination /opt/eclipse \
 -repository \
-http://download.eclipse.org/releases/kepler,\
+http://download.eclipse.org/releases/luna,\
 http://pydev.org/updates,\
 http://gnuarmeclipse.sourceforge.net/updates \
 -installIUs org.eclipse.jdt.feature.group,\
