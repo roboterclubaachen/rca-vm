@@ -73,5 +73,8 @@ ATTRS{idVendor}=="0483", ATTRS{idProduct}=="3748", MODE="664", GROUP="plugdev"
 # STM32 DFU
 ATTRS{idVendor}=="0483", ATTRS{idProduct}=="df11", MODE="664", GROUP="plugdev"
 
+# USBasp AVR Programmer
+ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="05dc", MODE="664", GROUP="plugdev"
+
 LABEL="openocd_rules_end"
 
