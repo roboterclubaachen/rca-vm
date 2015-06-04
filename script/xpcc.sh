@@ -32,7 +32,7 @@ apt-get install -y openocd
 
 # build gitslave from source
 apt-get install -y libterm-progressbar-perl libparallel-iterator-perl
-git clone git://gitslave.git.sourceforge.net/gitroot/gitslave/gitslave
+git clone https://github.com/joelpurra/gitslave.git
 cd gitslave/
 make install
 cd
