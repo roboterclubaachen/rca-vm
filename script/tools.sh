@@ -5,7 +5,7 @@
 # Browser: firefox
 
 
-apt-get install -y xfce4-terminal ristretto firefox python-serial evince
+apt-get install -y xfce4-terminal ristretto firefox python-serial evince galculator
 
 # install grabserial
 cd ~
