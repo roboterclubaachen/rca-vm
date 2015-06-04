@@ -18,6 +18,8 @@ Vagrant.configure("2") do |config|
         v.customize ["modifyvm", :id, "--accelerate3d", "on"]
         v.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
         v.customize ["modifyvm", :id, "--usb", "on"]
+        v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+        v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
         #v.customize ["modifyvm", :id, "--usbehci", "on"]
     end
 end
