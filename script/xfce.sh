@@ -7,8 +7,8 @@ apt-get install -y xfce4 slim xubuntu-icon-theme shimmer-themes xfce4-places-plu
 # file manager plugins and better program menu
 apt-get install -y thunar-archive-plugin thunar-media-tags-plugin xfce4-whiskermenu-plugin
 
-# install keyboard layout chooser
-apt-get install -y xfce4-xkb-plugin
+# install keyboard layout chooser and battery status
+apt-get install -y xfce4-xkb-plugin xfce4-battery-plugin
 
 # disable screensaver
 echo "mode:off" > ~/.xscreensaver
