@@ -127,8 +127,8 @@
     "scripts": [
       "script/xfce.sh",
       "script/vmtools.sh",
-      "script/tools.sh",
       "script/xpcc.sh",
+      "script/tools.sh",
       "script/xpcc_files.sh",
       "script/java.sh",
       "script/eclipse.sh",
