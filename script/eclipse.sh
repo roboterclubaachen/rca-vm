@@ -25,7 +25,8 @@ echo "==> install the required eclipse plug-ins"
 -repository \
 http://download.eclipse.org/releases/luna,\
 http://pydev.org/updates,\
-http://gnuarmeclipse.sourceforge.net/updates \
+http://gnuarmeclipse.sourceforge.net/updates,\
+https://raw.githubusercontent.com/mystilleef/eclipse4-smartsave-updatesite/master/com.laboki.eclipse.updatesite.smartsave \
 -installIUs org.eclipse.jdt.feature.group,\
 org.python.pydev.feature.feature.group,\
 org.eclipse.wst.xml_ui.feature.feature.group,\
@@ -36,5 +37,6 @@ ilg.gnuarmeclipse.templates.freescale.feature.group,\
 ilg.gnuarmeclipse.templates.cortexm.feature.group,\
 ilg.gnuarmeclipse.templates.stm.feature.group,\
 ilg.gnuarmeclipse.debug.gdbjtag.jlink.feature.group,\
-ilg.gnuarmeclipse.debug.gdbjtag.openocd.feature.group \
--tag rca-plugin-v1.1
+ilg.gnuarmeclipse.debug.gdbjtag.openocd.feature.group,\
+com.laboki.eclipse.feature.smartsave.feature.group \
+-tag rca-plugin-v1.2
