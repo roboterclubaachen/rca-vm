@@ -114,6 +114,10 @@
     "destination": "~/Season2015"
   },{
     "type": "file",
+    "source": "http/Season2016",
+    "destination": "~/Season2016"
+  },{
+    "type": "file",
     "source": "http/Initializer",
     "destination": "~/Initializer"
   },{

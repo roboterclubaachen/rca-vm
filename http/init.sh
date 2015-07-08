@@ -31,6 +31,9 @@ if [[ ! $(git config --global --get user.name) || ! $(git config --global --get 
         cd ~/rcasoftware/s2015/xpcc/
         git config user.name "$GIT_PSEUDONYM"
         git config user.email "$GIT_PSEUDONYM"
+        cd ~/rcasoftware/s2016/xpcc/
+        git config user.name "$GIT_PSEUDONYM"
+        git config user.email "$GIT_PSEUDONYM"
     fi
     echo
     echo 'Thanks, I have set up git for you.'
@@ -51,6 +54,10 @@ if [[ ! $(git config --global --get user.name) || ! $(git config --global --get 
     gits fetch --all
     gits reset --hard origin/develop
     cd ~/rcasoftware/s2015/
+    gits populate
+    gits fetch --all
+    gits reset --hard origin/develop
+    cd ~/rcasoftware/s2016/
     gits populate
     gits fetch --all
     gits reset --hard origin/develop

@@ -21,14 +21,15 @@ if [[ -n "$RCA_USER" ]]; then
 	echo 'Cloning last seasons software repositories...'
 	gits clone https://$RCA_USER:$RCA_PASSWORD@$RCA_SERVER/git/software.git -b season2013 ~/rcasoftware/s2013
 	gits clone https://$RCA_SERVER/git/software.git -b season2014 ~/rcasoftware/s2014
+	gits clone https://$RCA_SERVER/git/software.git -b season2015 ~/rcasoftware/s2015
 
 	echo
 	echo 'Cloning the current software repositories...'
-	gits clone https://$RCA_SERVER/git/software.git -b develop ~/rcasoftware/s2015
+	gits clone https://$RCA_SERVER/git/software.git -b develop ~/rcasoftware/s2016
 
 	echo
 	echo 'Setting up git-flow...'
-	cd ~/rcasoftware/s2015/
+	cd ~/rcasoftware/s2016/
 	gits exec git branch --track master origin/master
 	gits exec git flow init -d
 
@@ -40,6 +41,8 @@ if [[ -n "$RCA_USER" ]]; then
 	cp -R . ~/rcasoftware/s2014/
 	cd ~/rcasoftware/s2015/.rca/eclipse/
 	cp -R . ~/rcasoftware/s2015/
+	cd ~/rcasoftware/s2016/.rca/eclipse/
+	cp -R . ~/rcasoftware/s2016/
 
 	cd
 	# symlink to desktop for easier access
@@ -54,9 +57,11 @@ if [[ -n "$RCA_USER" ]]; then
 	chmod a+x ~/Season2013
 	chmod a+x ~/Season2014
 	chmod a+x ~/Season2015
+	chmod a+x ~/Season2016
 	mv ~/Season2013 ~/Desktop
 	mv ~/Season2014 ~/Desktop
 	mv ~/Season2015 ~/Desktop
+	mv ~/Season2016 ~/Desktop
 	# move the init script to the right place
 	mv ~/ReadMe.html ~/Desktop
 
@@ -106,6 +111,14 @@ if [[ -n "$RCA_USER" ]]; then
 	svn update 2015_hal --set-depth immediates
 	svn update 2015_hal/et --set-depth infinity
 
+	# season 2016
+	svn update 2016_common --set-depth immediates
+	svn update 2016_common/et --set-depth infinity
+	svn update 2016_Phobos --set-depth immediates
+	svn update 2016_Phobos/et --set-depth infinity
+	svn update 2016_hal --set-depth immediates
+	svn update 2016_hal/et --set-depth infinity
+
 	# remove all authentication credentials
 	rm -rf ~/.subversion/auth
 
@@ -116,4 +129,5 @@ else
 	rm ~/Season2013
 	rm ~/Season2014
 	rm ~/Season2015
+	rm ~/Season2016
 fi
