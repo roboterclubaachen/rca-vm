@@ -48,15 +48,15 @@ if [[ ! $(git config --global --get user.name) || ! $(git config --global --get 
     cd ~/rcasoftware/s2013/
     gits populate
     gits fetch --all
-    gits reset --hard origin/develop
+    gits reset --hard origin/season2013
     cd ~/rcasoftware/s2014/
     gits populate
     gits fetch --all
-    gits reset --hard origin/develop
+    gits reset --hard origin/season2014
     cd ~/rcasoftware/s2015/
     gits populate
     gits fetch --all
-    gits reset --hard origin/develop
+    gits reset --hard origin/season2015
     cd ~/rcasoftware/s2016/
     gits populate
     gits fetch --all
