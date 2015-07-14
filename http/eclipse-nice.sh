@@ -1,2 +1,3 @@
 #!/bin/sh
-GTK2_RC_FILES=$GTK2_RC_FILES:/opt/eclipse/eclipse.gtkrc /opt/eclipse/eclipse -vmargs -Dosgi.instance.area.default=@user.home/rcaworkspaces/workspace15
+export SWT_GTK3=0
+GTK2_RC_FILES=$GTK2_RC_FILES:/home/rca/eclipse/eclipse.gtkrc /home/rca/eclipse/rca-eclipse/eclipse/eclipse
