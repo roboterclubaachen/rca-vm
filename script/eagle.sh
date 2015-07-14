@@ -12,8 +12,9 @@ apt-get install -y eagle
 mkdir ~/eagle
 
 if [[ -n "$RCA_USER" ]]; then
+	mkdir ~/.eagle/
 	# download the license key
-	curl https://$RCA_USER:$RCA_PASSWORD@$RCA_SERVER/ftp/software/eagle/6.x/license.key -o ~/eagle.key
+	curl https://$RCA_USER:$RCA_PASSWORD@$RCA_SERVER/ftp/software/eagle/6.x/license.key -o ~/.eagle/license.key
 else
 	# remove our custom eagle rc
 	rm ~/.eaglerc
