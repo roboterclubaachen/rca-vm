@@ -114,10 +114,10 @@ if [[ -n "$RCA_USER" ]]; then
 	# season 2016
 	svn update 2016_common --set-depth immediates
 	svn update 2016_common/et --set-depth infinity
-	svn update 2016_Phobos --set-depth immediates
-	svn update 2016_Phobos/et --set-depth infinity
-	svn update 2016_hal --set-depth immediates
-	svn update 2016_hal/et --set-depth infinity
+	svn update 2016_big --set-depth immediates
+	svn update 2016_big/et --set-depth infinity
+	svn update 2016_little --set-depth immediates
+	svn update 2016_little/et --set-depth infinity
 
 	# remove all authentication credentials
 	rm -rf ~/.subversion/auth
