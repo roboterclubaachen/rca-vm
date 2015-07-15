@@ -1,8 +1,8 @@
 echo "==> download and expand eclipse-installer (oomph)"
-curl http://ftp.fau.de/eclipse/oomph/updates/latest/org.eclipse.oomph.site.zip -o oomph.zip
 mkdir ~/eclipse
-unzip oomph.zip -d ~/eclipse/eclipse-installer
-rm oomph.zip
+cd ~/eclipse
+curl http://ftp-stud.fht-esslingen.de/pub/Mirrors/eclipse/oomph/products/eclipse-inst-linux64.tar.gz | tar xz
+chown -R rca ~/eclipse
 
 echo "==> installing eclipse launch files"
 mv ~/eclipse.desktop /usr/share/applications
