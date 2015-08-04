@@ -76,5 +76,17 @@ ATTRS{idVendor}=="0483", ATTRS{idProduct}=="df11", MODE="664", GROUP="plugdev"
 # USBasp AVR Programmer
 ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="05dc", MODE="664", GROUP="plugdev"
 
+# Atmel AVR ISP mkII
+ATTRS{idVendor}=="03eb", ATTRS{idProduct}=="2104", MODE="664", GROUP="plugdev"
+
+# usbprog bootloader
+ATTRS{idVendor}=="1781", ATTRS{idProduct}=="0c62", MODE="664", GROUP="plugdev"
+ 
+# USBasp programmer
+ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="05dc", MODE="664", GROUP="plugdev"
+ 
+# USBtiny programmer
+ATTRS{idVendor}=="1781", ATTRS{idProduct}=="0c9f", MODE="664", GROUP="plugdev"
+
 LABEL="openocd_rules_end"
 
