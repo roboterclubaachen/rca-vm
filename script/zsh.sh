@@ -18,3 +18,4 @@ EOF
 
 # add our configurations to zshrc
 echo "source ~/.rcarc" >> ~/.zshrc
+echo "export PATH=\$PATH:/opt/openocd/bin/" >> ~/.zshrc

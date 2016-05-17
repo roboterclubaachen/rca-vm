@@ -28,7 +28,18 @@ chown $USERNAME:$USERNAME -R .local
 sh -c 'echo "tipc" >> /etc/modules'
 
 # install openocd from repository
-apt-get install -y openocd
+cd
+git clone git://git.code.sf.net/p/openocd/code openocd
+cd openocd
+# build the master branch, we need the latest boards
+#git checkout v0.10.0
+./bootstrap
+./configure --enable-maintainer-mode --enable-ftdi  --enable-stlink \
+--enable-buspirate --prefix=/opt/openocd --disable-option-checking
+make
+make install
+cd
+rm -r ~/openocd
 
 # build gitslave from source
 apt-get install -y libterm-progressbar-perl libparallel-iterator-perl
