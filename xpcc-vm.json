@@ -2,8 +2,8 @@
   "variables": {
     "headless": "",
     "auto_upgrade": "",
-    "iso_url": "http://ftp.halifax.rwth-aachen.de/ubuntu-releases/trusty/ubuntu-14.04.2-server-amd64.iso",
-    "iso_checksum": "3bfa6eac84d527380d0cc52db9092cde127f161e"
+    "iso_url": "http://ftp.halifax.rwth-aachen.de/ubuntu-releases/trusty/ubuntu-14.04.4-server-amd64.iso",
+    "iso_checksum": "3ffb7a3690ce9a07ac4a4d1b829f990681f7e47d"
   },
   "builders": [
   {
@@ -19,7 +19,7 @@
     "ssh_password": "rca",
     "ssh_wait_timeout": "10000s",
     "boot_wait": "10s",
-    "headless": "{{ user `headless` }}",   
+    "headless": "{{ user `headless` }}",
     "boot_command": [
       "<esc><esc><enter><wait>",
       "/install/vmlinuz auto",
