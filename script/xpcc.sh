@@ -38,6 +38,7 @@ cd openocd
 --enable-buspirate --prefix=/opt/openocd --disable-option-checking
 make
 make install
+cp contrib/99-openocd.rules /etc/udev/rules.d/99-openocd.rules
 cd
 rm -r ~/openocd
 
