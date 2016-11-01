@@ -22,14 +22,15 @@ if [[ -n "$RCA_USER" ]]; then
 	gits clone https://$RCA_USER:$RCA_PASSWORD@$RCA_SERVER/git/software.git -b season2013 ~/rcasoftware/s2013
 	gits clone https://$RCA_SERVER/git/software.git -b season2014 ~/rcasoftware/s2014
 	gits clone https://$RCA_SERVER/git/software.git -b season2015 ~/rcasoftware/s2015
+	gits clone https://$RCA_SERVER/git/software.git -b season2016 ~/rcasoftware/s2016
 
 	echo
 	echo 'Cloning the current software repositories...'
-	gits clone https://$RCA_SERVER/git/software.git -b develop ~/rcasoftware/s2016
+	gits clone https://$RCA_SERVER/git/software.git -b develop ~/rcasoftware/s2017
 
 	echo
 	echo 'Setting up git-flow...'
-	cd ~/rcasoftware/s2016/
+	cd ~/rcasoftware/s2017/
 	gits exec git branch --track master origin/master
 	gits exec git flow init -d
 
@@ -43,6 +44,8 @@ if [[ -n "$RCA_USER" ]]; then
 	cp -R . ~/rcasoftware/s2015/
 	cd ~/rcasoftware/s2016/.rca/eclipse/
 	cp -R . ~/rcasoftware/s2016/
+	cd ~/rcasoftware/s2017/.rca/eclipse/
+	cp -R . ~/rcasoftware/s2017/
 
 	cd
 	# symlink to desktop for easier access
@@ -58,10 +61,12 @@ if [[ -n "$RCA_USER" ]]; then
 	chmod a+x ~/Season2014
 	chmod a+x ~/Season2015
 	chmod a+x ~/Season2016
+	chmod a+x ~/Season2017
 	mv ~/Season2013 ~/Desktop
 	mv ~/Season2014 ~/Desktop
 	mv ~/Season2015 ~/Desktop
 	mv ~/Season2016 ~/Desktop
+	mv ~/Season2017 ~/Desktop
 	# move the init script to the right place
 	mv ~/ReadMe.html ~/Desktop
 
@@ -130,4 +135,5 @@ else
 	rm ~/Season2014
 	rm ~/Season2015
 	rm ~/Season2016
+	rm ~/Season2017
 fi
